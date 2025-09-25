@@ -57,7 +57,14 @@ CATEGORIES_DATA = [
 # Serve static files
 app.mount("/js", StaticFiles(directory="js"), name="js")
 app.mount("/assets", StaticFiles(directory="assets"), name="assets")
-app.mount("/css", StaticFiles(directory="."), name="css")
+
+# Serve CSS file directly
+from fastapi.responses import FileResponse
+
+@app.get("/styles.css")
+async def get_styles():
+    """Serve the main CSS file"""
+    return FileResponse("styles.css", media_type="text/css")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root():
@@ -108,16 +115,51 @@ async def submit_contact(contact: ContactMessage):
 @app.post("/api/purchase")
 async def process_purchase(purchase: PurchaseRequest):
     """Process a purchase request"""
-    # Validate that products exist
+    # Validate products exist and recalculate total server-side
+    server_total = 0.0
+    validated_items = []
+    
     for item in purchase.items:
-        product_exists = any(p["id"] == item.product_id for p in PRODUCTS_DATA)
-        if not product_exists:
+        # Find product in server data
+        product_data = next((p for p in PRODUCTS_DATA if p["id"] == item.product_id), None)
+        if not product_data:
             raise HTTPException(status_code=400, detail=f"Product {item.product_id} not found")
+        
+        # Validate quantity
+        if item.quantity <= 0:
+            raise HTTPException(status_code=400, detail=f"Invalid quantity for product {item.product_id}")
+        
+        # Use server-side price (ignore client price for security)
+        server_price = product_data["price"]
+        item_total = server_price * item.quantity
+        server_total += item_total
+        
+        validated_items.append({
+            "product_id": item.product_id,
+            "product_name": product_data["name"],
+            "quantity": item.quantity,
+            "unit_price": server_price,
+            "total_price": item_total
+        })
+    
+    # Validate client total against server-calculated total (allow small floating point differences)
+    if abs(server_total - purchase.total) > 0.01:
+        raise HTTPException(
+            status_code=400, 
+            detail=f"Total mismatch. Expected: ${server_total:.2f}, Received: ${purchase.total:.2f}"
+        )
     
     # In a real app, you would process payment and save to database
-    print(f"New purchase from {purchase.customer_name}: ${purchase.total}")
+    print(f"New purchase from {purchase.customer_name}: ${server_total:.2f}")
+    print(f"Items: {validated_items}")
     
-    return {"status": "success", "message": "Pedido procesado correctamente", "order_id": f"ASR{datetime.now().strftime('%Y%m%d%H%M%S')}"}
+    return {
+        "status": "success", 
+        "message": "Pedido procesado correctamente", 
+        "order_id": f"ASR{datetime.now().strftime('%Y%m%d%H%M%S')}",
+        "total": server_total,
+        "items": validated_items
+    }
 
 if __name__ == "__main__":
     import uvicorn
