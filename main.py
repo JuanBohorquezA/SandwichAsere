@@ -26,31 +26,18 @@ app.add_middleware(
 # Sample data for products
 PRODUCTS_DATA = [
     # Sándwiches
-    {"id": 1, "name": "Sándwich Cubano Clásico", "description": "Pan cubano, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 12.99, "category": "sandwiches", "image": "/assets/sandwich-cubano.jpg", "popular": True},
-    {"id": 2, "name": "Medianoche", "description": "Pan dulce, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 11.99, "category": "sandwiches", "image": "/assets/medianoche.jpg", "popular": False},
-    {"id": 3, "name": "Pan con Lechón", "description": "Pan cubano crujiente con lechón asado, cebolla y mojo", "price": 13.99, "category": "sandwiches", "image": "/assets/pan-lechon.jpg", "popular": True},
-    
-    # Platos Principales
-    {"id": 4, "name": "Ropa Vieja", "description": "Carne de res deshebrada en salsa criolla con arroz y frijoles", "price": 16.99, "category": "platos", "image": "/assets/ropa-vieja.jpg", "popular": True},
-    {"id": 5, "name": "Pollo a la Plancha", "description": "Pechuga de pollo marinada a la plancha con mojo y vegetales", "price": 14.99, "category": "platos", "image": "/assets/pollo-plancha.jpg", "popular": False},
-    {"id": 6, "name": "Pescado a la Veracruzana", "description": "Filete de pescado fresco en salsa de tomate con aceitunas y alcaparras", "price": 18.99, "category": "platos", "image": "/assets/pescado-veracruz.jpg", "popular": False},
-    {"id": 7, "name": "Arroz con Pollo", "description": "Arroz amarillo con pollo, vegetales y especias cubanas", "price": 15.99, "category": "platos", "image": "/assets/arroz-pollo.jpg", "popular": True},
-    
-    # Bebidas
-    {"id": 8, "name": "Café Cubano", "description": "Espresso endulzado al estilo cubano tradicional", "price": 3.99, "category": "bebidas", "image": "/assets/cafe-cubano.jpg", "popular": True},
-    {"id": 9, "name": "Mojito Sin Alcohol", "description": "Refrescante bebida con menta, limón y agua con gas", "price": 6.99, "category": "bebidas", "image": "/assets/mojito.jpg", "popular": False},
-    {"id": 10, "name": "Guarapo de Caña", "description": "Jugo fresco de caña de azúcar natural", "price": 4.99, "category": "bebidas", "image": "/assets/guarapo.jpg", "popular": False},
+    {"id": 1, "name": "Sándwich Cubano Clásico", "description": "Pan cubano, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 12.99, "category": "sandwiches", "image": "/assets/sandwiches/clasico.jpg", "popular": True},
+    {"id": 2, "name": "Medianoche", "description": "Pan dulce, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 11.99, "category": "sandwiches", "image": "/assets/sandwiches/medianoche.jpg", "popular": False},
+    {"id": 3, "name": "Pan con Lechón", "description": "Pan cubano crujiente con lechón asado, cebolla y mojo", "price": 13.99, "category": "sandwiches", "image": "/assets/sandwiches/panconlechon.jpg", "popular": True},   
     
     # Postres
-    {"id": 11, "name": "Flan Cubano", "description": "Postre tradicional de leche condensada con caramelo", "price": 6.99, "category": "postres", "image": "/assets/flan.jpg", "popular": True},
-    {"id": 12, "name": "Churros Cubanos", "description": "Churros crujientes con azúcar y canela, servidos calientes", "price": 5.99, "category": "postres", "image": "/assets/churros.jpg", "popular": False},
-    {"id": 13, "name": "Helado de Coco", "description": "Cremoso helado artesanal de coco fresco", "price": 4.99, "category": "postres", "image": "/assets/helado-coco.jpg", "popular": False},
+    {"id": 4, "name": "Flan Cubano", "description": "Postre tradicional de leche condensada con caramelo", "price": 6.99, "category": "postres", "image": "/assets/postres/flan-cubano.jpg", "popular": True},
+    {"id": 5, "name": "Churros Cubanos", "description": "Churros crujientes con azúcar y canela, servidos calientes", "price": 5.99, "category": "postres", "image": "/assets/postres/churros.webp", "popular": False},
+    {"id": 6, "name": "Helado de Coco", "description": "Cremoso helado artesanal de coco fresco", "price": 4.99, "category": "postres", "image": "/assets/postres/helado-de-coco.jpg", "popular": False},
 ]
 
 CATEGORIES_DATA = [
     {"id": "sandwiches", "name": "Sándwiches"},
-    {"id": "platos", "name": "Platos Principales"},
-    {"id": "bebidas", "name": "Bebidas"},
     {"id": "postres", "name": "Postres"}
 ]
 

@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -20,7 +22,7 @@
         <nav class="nav">
             <div class="nav__container">
                 <div class="nav__logo">
-                    <img src="/assets/logo.png" alt="Sandwich Asere Logo" class="nav__logo-img" onerror="this.style.display='none';">
+                    <img src="/assets/Icon.jpeg" alt="Sandwich Asere Logo" class="nav__logo-img" onerror="this.style.display='none';">
                     <span class="nav__logo-text">Sandwich Asere</span>
                 </div>
                 
@@ -74,7 +76,7 @@
                 </button>
             </div>
             <div class="hero__image">
-                <img src="/assets/hero-sandwich.jpg" alt="Delicioso sándwich cubano" class="hero__img" onerror="this.style.display='none';">
+                <img src="/assets/hero/principal.avif" alt="Delicioso sándwich cubano" class="hero__img" onerror="this.style.display='none';">
             </div>
         </div>
     </section>
@@ -92,12 +94,6 @@
                 </button>
                 <button class="filter-btn" data-category="sandwiches">
                     Sándwiches
-                </button>
-                <button class="filter-btn" data-category="platos">
-                    Platos Principales
-                </button>
-                <button class="filter-btn" data-category="bebidas">
-                    Bebidas
                 </button>
                 <button class="filter-btn" data-category="postres">
                     Postres
@@ -175,40 +171,55 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__content">
-                <div class="footer__section">
-                    <div class="footer__logo">
-                        <span class="footer__logo-text">Sandwich Asere</span>
-                    </div>
-                    <p class="footer__description">
-                        Auténtica comida cubana desde 1995. Tradición y sabor en cada plato.
-                    </p>
-                </div>
-                
-                <div class="footer__section">
-                    <h3 class="footer__title">Enlaces</h3>
-                    <ul class="footer__links">
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#products">Menú</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer__section">
-                    <h3 class="footer__title">Horarios</h3>
-                    <p class="footer__hours">
-                        Lunes - Domingo<br>
-                        11:00 AM - 10:00 PM
-                    </p>
-                </div>
+      <div class="footer__container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <div class="footer__logo">
+              <span class="footer__logo-text">Sandwich Asere</span>
             </div>
-            
-            <div class="footer__bottom">
-                <p>&copy; 2025 Sandwich Asere. Todos los derechos reservados.</p>
+            <p class="footer__description">
+              Auténtica comida cubana desde 1995. Tradición y sabor en cada plato.
+            </p>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__title">Enlaces</h3>
+            <ul class="footer__links">
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#products">Menú</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h3 class="footer__title">Horarios</h3>
+            <p class="footer__hours">
+              Lunes - Domingo<br>
+              11:00 AM - 10:00 PM
+            </p>
+          </div>
+
+          <!-- Redes sociales -->
+          <div class="footer__section">
+            <h3 class="footer__title">Síguenos</h3>
+            <div class="footer__social">
+              <a
+                href="https://www.instagram.com/sandwich_asere_/"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
+          </div>
         </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2025 Sandwich Asere. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </footer>
+
 
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cart-sidebar">

@@ -649,6 +649,23 @@ img {
     color: var(--color-gray);
 }
 
+/* Redes sociales */
+.footer__social {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.footer__social a {
+  color: var(--color-gray);
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.footer__social a:hover {
+  color: var(--color-primary);
+}
+
+
 /* Cart Sidebar */
 .cart-sidebar {
     position: fixed;
@@ -1015,3 +1032,4 @@ img {
         text-align: center;
     }
 }
+
