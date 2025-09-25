@@ -58,7 +58,7 @@ class ProductsManager {
             // Use fallback categories
             this.categories = [
                 { id: 'sandwiches', name: 'Sándwiches' },
-                { id: 'postres', name: 'Postres' }
+                { id: 'combos', name: 'Combos' }
             ];
         }
     }

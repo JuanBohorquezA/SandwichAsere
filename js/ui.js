@@ -148,15 +148,13 @@ class UIManager {
     createProductCard(product) {
         return `
             <div class="product-card" data-category="${product.category}" data-id="${product.id}">
-                ${product.popular ? '<div class="product-card__popular">Popular</div>' : ''}
-                <div class="product-card__image">
-                    <img src="${product.image}" alt="${product.name}" onerror="this.parentElement.innerHTML='Imagen no disponible';" />
-                </div>
+                ${product.popular ? '<div class="product-card__popular">⭐ Popular</div>' : ''}
+                <img class="product-card__image" src="${product.image}" alt="${product.name}" onerror="this.outerHTML='Imagen no disponible';" />
                 <div class="product-card__content">
                     <h3 class="product-card__name">${product.name}</h3>
                     <p class="product-card__description">${product.description}</p>
                     <div class="product-card__footer">
-                        <span class="product-card__price">$${product.price.toFixed(2)}</span>
+                        <span class="product-card__price">$ ${this.formatPrice(product.price)}</span>
                         <button class="product-card__add-btn" data-product-id="${product.id}">
                             Agregar
                         </button>
@@ -165,6 +163,12 @@ class UIManager {
             </div>
         `;
     }
+
+    formatPrice(value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+
 
     createCartItem(item, product) {
         return `

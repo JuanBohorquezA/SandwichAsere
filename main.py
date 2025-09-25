@@ -26,14 +26,14 @@ app.add_middleware(
 # Sample data for products
 PRODUCTS_DATA = [
     # Sándwiches
-    {"id": 1, "name": "Sándwich Cubano Clásico", "description": "Pan cubano, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 12.99, "category": "sandwiches", "image": "/assets/sandwiches/clasico.jpg", "popular": True},
-    # Adicción a la carta
-    {"id": 4, "name": "Papas", "description": "Postre tradicional de leche condensada con caramelo", "price": 6.99, "category":
+    {"id": 1, "name": "Sándwich Cubano Clásico", "description": "Pan cubano, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 12000, "category": "sandwiches", "image": "/assets/sandwiches/sandwich.jpg", "popular": True},
+    # Combos
+    {"id": 2, "name": "Sándwich Cubano Clásico + papas + gaseaas 300ml", "description": "Disfruta de nuestro Sándwich Cubano Clásico preparado con pan cubano fresco, jamón, cerdo asado jugoso, queso suizo derretido, pepinillos crujientes y mostaza. Acompañado de papas fritas doradas y una refrescante gaseosa de 300ml. ¡Un combo completo y lleno de sabor, ideal para calmar el hambre con el auténtico toque cubano!", "price": 15000, "category": "combos", "image": "/assets/combos/combo.jpg", "popular": True},
 ]
 
 CATEGORIES_DATA = [
     {"id": "sandwiches", "name": "Sándwiches"},
-    {"id": "postres", "name": "Postres"}
+    {"id": "combos", "name": "Combos"}
 ]
 
 # Serve static files
