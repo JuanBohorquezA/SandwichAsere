@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich Asere - Auténtica Comida Cubana</title>
+    <meta name="description" content="Disfruta de los mejores sándwiches cubanos y platos tradicionales en Sandwich Asere. Comida auténtica cubana con sabor casero.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__logo">
+                    <img src="/assets/logo.png" alt="Sandwich Asere Logo" class="nav__logo-img" onerror="this.style.display='none';">
+                    <span class="nav__logo-text">Sandwich Asere</span>
+                </div>
+                
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link">Inicio</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#products" class="nav__link">Menú</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav__actions">
+                    <button class="cart-btn" id="cart-btn" aria-label="Abrir carrito">
+                        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="m1 1 4 4 12 2 3 6H6"></path>
+                        </svg>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    
+                    <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Auténtica Comida <span class="hero__title--accent">Cubana</span>
+                </h1>
+                <p class="hero__description">
+                    Disfruta de los sabores tradicionales de Cuba con nuestros sándwiches artesanales, 
+                    platos caseros y bebidas refrescantes. Cada bocado es una experiencia única.
+                </p>
+                <button class="hero__cta" id="hero-cta">
+                    Comprar Ahora
+                </button>
+            </div>
+            <div class="hero__image">
+                <img src="/assets/hero-sandwich.jpg" alt="Delicioso sándwich cubano" class="hero__img" onerror="this.style.display='none';">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products__container">
+            <h2 class="section__title">Nuestro Menú</h2>
+            <p class="section__description">Descubre nuestra selección de platillos cubanos auténticos</p>
+            
+            <!-- Product Filters -->
+            <div class="filters">
+                <button class="filter-btn filter-btn--active" data-category="all">
+                    Todos
+                </button>
+                <button class="filter-btn" data-category="sandwiches">
+                    Sándwiches
+                </button>
+                <button class="filter-btn" data-category="platos">
+                    Platos Principales
+                </button>
+                <button class="filter-btn" data-category="bebidas">
+                    Bebidas
+                </button>
+                <button class="filter-btn" data-category="postres">
+                    Postres
+                </button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="search-input" placeholder="Buscar productos...">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading" id="products-loading">
+                <div class="loading__spinner"></div>
+                <p>Cargando productos...</p>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products__grid" id="products-grid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact__container">
+            <h2 class="section__title">Contáctanos</h2>
+            <p class="section__description">¿Tienes alguna pregunta? Nos encantaría escucharte</p>
+            
+            <form class="contact__form" id="contact-form">
+                <div class="form__group">
+                    <label for="contact-name" class="form__label">Nombre</label>
+                    <input type="text" id="contact-name" name="name" class="form__input" required>
+                </div>
+                
+                <div class="form__group">
+                    <label for="contact-email" class="form__label">Email</label>
+                    <input type="email" id="contact-email" name="email" class="form__input" required>
+                </div>
+                
+                <div class="form__group">
+                    <label for="contact-message" class="form__label">Mensaje</label>
+                    <textarea id="contact-message" name="message" class="form__textarea" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="form__submit" id="contact-submit">
+                    <span class="submit-text">Enviar Mensaje</span>
+                    <div class="submit-loader" style="display: none;">
+                        <div class="submit-spinner"></div>
+                    </div>
+                </button>
+            </form>
+            
+            <div class="contact__info">
+                <div class="info__item">
+                    <h3>Dirección</h3>
+                    <p>123 Calle Habana, Miami, FL 33101</p>
+                </div>
+                <div class="info__item">
+                    <h3>Teléfono</h3>
+                    <p>(305) 123-4567</p>
+                </div>
+                <div class="info__item">
+                    <h3>Horarios</h3>
+                    <p>Lun - Dom: 11:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Sandwich Asere</span>
+                    </div>
+                    <p class="footer__description">
+                        Auténtica comida cubana desde 1995. Tradición y sabor en cada plato.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Enlaces</h3>
+                    <ul class="footer__links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#products">Menú</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Horarios</h3>
+                    <p class="footer__hours">
+                        Lunes - Domingo<br>
+                        11:00 AM - 10:00 PM
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Sandwich Asere. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3 class="cart-title">Tu Pedido</h3>
+                <button class="cart-close" id="cart-close" aria-label="Cerrar carrito">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be rendered here -->
+            </div>
+            
+            <div class="cart-empty" id="cart-empty" style="display: none;">
+                <svg class="cart-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="m1 1 4 4 12 2 3 6H6"></path>
+                </svg>
+                <p>Tu carrito está vacío</p>
+                <button class="continue-shopping" id="continue-shopping">Continuar Comprando</button>
+            </div>
+            
+            <div class="cart-footer" id="cart-footer">
+                <div class="cart-total">
+                    <span class="total-label">Total:</span>
+                    <span class="total-amount" id="cart-total">$0.00</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div class="message-container" id="message-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/ui.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
