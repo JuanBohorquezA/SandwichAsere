@@ -27,13 +27,8 @@ app.add_middleware(
 PRODUCTS_DATA = [
     # Sándwiches
     {"id": 1, "name": "Sándwich Cubano Clásico", "description": "Pan cubano, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 12.99, "category": "sandwiches", "image": "/assets/sandwiches/clasico.jpg", "popular": True},
-    {"id": 2, "name": "Medianoche", "description": "Pan dulce, jamón, cerdo asado, queso suizo, pepinillos y mostaza", "price": 11.99, "category": "sandwiches", "image": "/assets/sandwiches/medianoche.jpg", "popular": False},
-    {"id": 3, "name": "Pan con Lechón", "description": "Pan cubano crujiente con lechón asado, cebolla y mojo", "price": 13.99, "category": "sandwiches", "image": "/assets/sandwiches/panconlechon.jpg", "popular": True},   
-    
-    # Postres
-    {"id": 4, "name": "Flan Cubano", "description": "Postre tradicional de leche condensada con caramelo", "price": 6.99, "category": "postres", "image": "/assets/postres/flan-cubano.jpg", "popular": True},
-    {"id": 5, "name": "Churros Cubanos", "description": "Churros crujientes con azúcar y canela, servidos calientes", "price": 5.99, "category": "postres", "image": "/assets/postres/churros.webp", "popular": False},
-    {"id": 6, "name": "Helado de Coco", "description": "Cremoso helado artesanal de coco fresco", "price": 4.99, "category": "postres", "image": "/assets/postres/helado-de-coco.jpg", "popular": False},
+    # Adicción a la carta
+    {"id": 4, "name": "Papas", "description": "Postre tradicional de leche condensada con caramelo", "price": 6.99, "category":
 ]
 
 CATEGORIES_DATA = [
